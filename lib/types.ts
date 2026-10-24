@@ -1,0 +1,11 @@
+export type Role = 'tenant' | 'landlord' | 'admin';
+export type User = {id:string; name:string; email:string; role:Role; phone:string; bio:string; verified:boolean; created_at:string};
+export type Property = {id:string; owner_id:string; title:string; location:string; address:string; type:string; price:number; beds:number; baths:number; area:number; description:string; images:string[]; amenities:string[]; lat:number; lng:number; status:string; featured:boolean; demo:boolean; created_at:string; owner_name:string; owner_verified:boolean; rating:number; review_count:number; saved?:boolean};
+export type Visit = {id:string; property_id:string; tenant_id:string; visit_date:string; visit_time:string; status:string; note:string; title:string; location:string; images:string[]; price:number; tenant_name:string; owner_name:string; owner_id:string; created_at:string};
+export type Conversation = {id:string; property_id:string; tenant_id:string; owner_id:string; title:string; images:string[]; tenant_name:string; owner_name:string; last_message:string; last_at:string; unread:number};
+export type Message = {id:string; conversation_id:string; sender_id:string; body:string; created_at:string; read_at:string|null};
+export type Notification = {id:string; title:string; body:string; href:string; read_at:string|null; created_at:string};
+export type Review = {id:string; user_id:string; rating:number; body:string; name:string; created_at:string};
+export const AMENITIES = ['Wi-Fi', 'Parking', 'Security', 'Balcony', 'Gym', 'Pool', 'Furnished', 'Pet friendly', 'Elevator', 'Laundry', 'Water backup', 'Power backup'];
+export const TYPES = ['Apartment', 'Studio', 'House', 'Villa'];
+export const SLOTS = ['09:00', '10:30', '12:00', '13:30', '15:00', '16:30'];
